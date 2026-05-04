@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+redis
+psycopg2-binary
+requests
+beautifulsoup4
+lxml
+playwright
+aiohttp
+python-dotenv
