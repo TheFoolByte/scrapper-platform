@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    command: python api/main.py
+    ports:
+      - "8000:8000"
+    env_file: .env
+    depends_on:
+      - redis
+
+  worker:
+    build: .
+    command: python worker/worker.py
+    env_file: .env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7
